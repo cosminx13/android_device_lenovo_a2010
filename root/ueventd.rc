@@ -160,8 +160,6 @@ subsystem adf
 /dev/ccci2_aud            0660   media      media
 /dev/eemcs_aud            0660   media      media
 
-/dev/irtx              0660   system     system
-
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
 /dev/pvr_sync             0666   root       root
@@ -211,6 +209,7 @@ subsystem adf
 #hang_detect
 /dev/RT_Monitor         0600   system  system
 /dev/kick_powerkey      0600   system  system
+/dev/irtx 		0660   system  system 
 
 #MTK In-House TEE
 /dev/ttyACM0		  0660   radio	    radio

@@ -37,11 +37,14 @@ on init
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
 
+# hct-drv: start
+    chmod 755 /system/bin/stkgesd
+# hct-drv: end
+
 # mount different fs start
 
 on charger
     mount ext4 /dev/block/platform/mtk-msdc.0/by-name/system /system ro wait
-    start fuelgauged
     start kpoc_charger
     start servicemanager
 
@@ -136,16 +139,6 @@ on post-fs-data
 
     # NFC
     mkdir /data/nfc_socket 0771 nfc radio
-#lenovo md5check
-    mkdir /data/local/log 0771 shell shell
-#lenovo fota
-    chown system system /cache/fota
-    chmod 755 /cache/fota
-    chown root root /cache/fota/error_code
-    chmod 666 /cache/fota/error_code
-
-    chmod 775 /cache
-    chmod 775 /cache/recovery
 
 # -----------------------
 # Add by MTK
@@ -174,6 +167,20 @@ on post-fs-data
     #chown system graphics /dev/mali
 
 
+    #liuyang add begin
+    chown root   radio  /sys/class/leds/red/brightness
+    chown root   radio  /sys/class/leds/green/brightness
+    chown root   radio  /sys/class/leds/blue/brightness
+    chown root   radio  /sys/class/leds/breathing-light/brightness
+    #liuyang add end
+# @2015 silead    
+    #mkdir /data/local 0751 root root
+    # MGao Modified 2014-05-26
+    mkdir /data/local 0777 root root
+    # mkdir /data/local/tmp 0771 shell shell
+    # MGao  modified 2014-05-26
+    mkdir /data/local/tmp 0777 shell shell
+# @2015 silead
 
     # Touch Panel
     # chmod 0664 /dev/touch
@@ -189,13 +196,6 @@ on post-fs-data
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_asamp
     chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
     chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
-
-    # TP firmware update
-    chown radio radio /sys/class/tsp_fw/touchscreen/cmd
-    chown radio radio /sys/class/tsp_fw/touchscreen/data
-    chown radio radio /sys/class/tsp_fw/touchscreen/upg
-    chown system system /sys/class/tsp_fw/touchscreen/gesture
-    chown system system /sys/class/tsp_fw/touchscreen/gesture_enable
 
     chmod 0666 /dev/pmem_multimedia
 
@@ -321,6 +321,46 @@ on post-fs-data
     chown system system /sys/class/misc/m_baro_misc/barodelay
     chown system system /sys/class/misc/m_baro_misc/barobatch
     chown system system /sys/class/misc/m_baro_misc/baroflush
+
+#add for bmc156d acc
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsdata
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsrange
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsbandwidth
+    chmod 0660 /sys/bus/platform/drivers/gsensor/cpsopmode
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_mode
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_data_frame
+    chmod 0660 /sys/bus/platform/drivers/gsensor/fifo_framecount
+    chown system system /sys/bus/platform/drivers/gsensor/cpsdata
+    chown system system /sys/bus/platform/drivers/gsensor/cpsrange
+    chown system system /sys/bus/platform/drivers/gsensor/cpsbandwidth
+    chown system system /sys/bus/platform/drivers/gsensor/cpsopmode
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_mode
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_data_frame
+    chown system system /sys/bus/platform/drivers/gsensor/fifo_framecount
+#add for bmg160 gyroscope
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/rawdata
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/datarate
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/range
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/powermode
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_mode
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+    chmod 0660 /sys/bus/platform/drivers/gyroscope/fifo_framecount
+    chown system system /sys/bus/platform/drivers/gyroscope/rawdata
+    chown system system /sys/bus/platform/drivers/gyroscope/datarate
+    chown system system /sys/bus/platform/drivers/gyroscope/range
+    chown system system /sys/bus/platform/drivers/gyroscope/powermode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_mode
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_data_frame
+    chown system system /sys/bus/platform/drivers/gyroscope/fifo_framecount
+#add for bmc156d mag
+    chmod 0660 /sys/bus/platform/drivers/msensor/cpsdata
+    chmod 0660 /sys/bus/platform/drivers/msensor/cpsopmode
+    chmod 0660 /sys/bus/platform/drivers/msensor/cpsreptxy
+    chmod 0660 /sys/bus/platform/drivers/msensor/cpsreptz
+    chown system system /sys/bus/platform/drivers/msensor/cpsdata
+    chown system system /sys/bus/platform/drivers/msensor/cpsopmode
+    chown system system /sys/bus/platform/drivers/msensor/cpsreptxy
+    chown system system /sys/bus/platform/drivers/msensor/cpsreptz
 
     #Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
@@ -506,11 +546,11 @@ on post-fs-data
     chmod 0660 /dev/kd_camera_flashlight
     chmod 0660 /dev/kd_camera_hw_bus2
     chmod 0660 /dev/FM50AF
+    chmod 0660 /dev/IMX164AF
+    chmod 0660 /dev/BU6424AF
     chmod 0660 /dev/CAM_CAL_DRV
     chmod 0660 /dev/BU6429AF
-     
-     
-    chown system camera /dev/BU6429AF
+
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-fdvt
@@ -519,7 +559,10 @@ on post-fs-data
     chown system camera /dev/kd_camera_flashlight
     chown system camera /dev/kd_camera_hw_bus2
     chown system camera /dev/FM50AF
+    chown system camera /dev/IMX164AF
+    chown system camera /dev/BU6424AF
     chown system camera /dev/CAM_CAL_DRV
+    chown system camera /dev/BU6429AF
 
     #MATV
     chmod 0660 /dev/MATV
@@ -623,8 +666,6 @@ on boot
     start xlogboot
 
     write /proc/sys/vm/dirty_writeback_centisecs 300
-    #add by lenovo 
-    write /proc/sys/vm/swappiness 60
     chmod 0660 /sys/power/autosleep
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
@@ -646,6 +687,18 @@ on boot
     chown system system /sys/class/leds/red/trigger
     chown system system /sys/class/leds/green/trigger
     chown system system /sys/class/leds/blue/trigger
+#<<hct
+    chmod 0777 /sys/bus/platform/drivers/kd_camera_flashlight/flashContrl
+    chown system radio  /sys/bus/platform/drivers/kd_camera_flashlight/flashContrl
+    
+#hct
+
+    #liuyang add begin
+    chmod 0777 /sys/class/leds/red/brightness
+    chmod 0777 /sys/class/leds/green/brightness
+    chmod 0777 /sys/class/leds/blue/brightness
+    chmod 0777 /sys/class/leds/breathing-light/brightness
+    #liuyang add end
 
     # Permission for hibernation
     chown radio system /sys/power/tuxonice
@@ -699,21 +752,40 @@ on boot
 # WMT proc
     chown shell system /proc/driver/wmt_dbg
     chown shell system /proc/driver/wmt_aee
-
+# @2015 silead    
+    chmod 0666 /dev/silead_fp_dev
+    chmod 0755 /system/bin/fpsvcd
+# @2015 silead 
+# jmt fingerprint
+    chmod 0666 /dev/jmt101
+# jmt fingerprint
+# newschip fingerprint
+    chmod 0666 /dev/vfsspi
+    chmod 0755 /system/bin/vcsFPService
+# newschip fingerprint
+#start voice detection
+    chmod 0777 /dev/spidev0.0
+#end voice detection
 # define device for EMCSMDLOGGER
     chown system radio /dev/ttyGS3
     chmod 0660 /dev/ttyGS3
 
+#liuyang add begin
+    chmod 0777 /sys/class/leds/red/brightness
+    chmod 0777 /sys/class/leds/green/brightness
+    chmod 0777 /sys/class/leds/blue/brightness
+    chown root radio  /sys/class/leds/red/brightness
+    chown root radio  /sys/class/leds/green/brightness
+    chown root radio  /sys/class/leds/blue/brightness
+
+    chmod 0777 /sys/class/leds/breathing-light/brightness
+    chown root radio  /sys/class/leds/breathing-light/brightness
+#liuyang add end
 #Define device for ATCID
     chmod 660 /dev/ttyGS0
     chown system /dev/ttyGS0
     chmod 660 /dev/ttyGS1
     chown system /dev/ttyGS1
-
-on property:ro.board.platform=mt6753
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1300000 
 
 on property:vold.decrypt=trigger_reset_main
     start stop_modem
@@ -913,6 +985,16 @@ service autokd /system/bin/autokd
 #
 # MTK Wi-Fi related services (End)
 #
+
+# hct-drv: start
+service stkgesd /system/bin/stkgesd
+class core
+oneshot
+disabled
+
+on property:persist.service.stk.gesture=1
+start stkgesd
+# hct-drv: end
 
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BK -dd
@@ -1123,7 +1205,7 @@ service wifi2agps /system/bin/wifi2agps
 service mnld /system/xbin/mnld
     class main
     user gps
-    group gps inet misc sdcard_rw sdcard_r media_rw system
+    group system gps inet misc sdcard_rw sdcard_r media_rw
     socket mnld stream 660 gps system
 
 service ipod /system/bin/ipod
@@ -1241,6 +1323,16 @@ service bmm056d /system/bin/bmm056d
     user system
     group system
     class main
+service bmc156d /system/bin/bmc156d
+    disabled
+    user system
+    group system
+    class main
+service bmx056d /system/bin/bmx056d
+    disabled
+    user system
+    group system
+    class main
 service mc6420d /system/bin/mc6420d
     disabled
     user system
@@ -1318,6 +1410,12 @@ service NvRAMAgent /system/bin/nvram_agent_binder
     user system
     group system
 
+#<<hct:liuyang
+service NvRAMBackupAgent /system/bin/nvram_backup_binder
+    class main
+    user system
+    group system
+#hct:liuyang
 service thermal_manager /system/bin/thermal_manager
     class main
     user root
@@ -1332,11 +1430,6 @@ service thermald /system/bin/thermald
     class main
     user system
     group system
-
-service fuelgauged /system/bin/fuelgauged
-    class main
-    user root
-    group root
 
 service sn /system/bin/sn
     class late_start
@@ -1421,13 +1514,31 @@ setprop persist.radio.reset_on_switch true
 setprop rild.mark_switchuser 0
 #end
 
-chmod 0644 /system/lib/liblenovoevdo-ril.so
-chomd 0644 /system/lib/lenovorilPara
+chmod 0644 /system/lib/libzteevdo-ril.so
+chomd 0644 /system/lib/zterilPara
 chown root /system/bin/pppd
 chmod 4755 /system/bin/pppd
 chown root /system/bin/chat
 chmod 4755 /system/bin/chat
 
+# @ 2015 silead
+service fpsvcd /system/bin/fpsvcd 
+   class main
+   user root   
+# @ 2015 silead 
+# newschip fingerprint
+service vcsFPService /system/bin/vcsFPService 
+   class main
+   user root   
+# newschip fingerprint
+#start voice detection
+service voice_vd /system/bin/voice_vd
+    class main
+    user system
+    group system
+    oneshot
+#otd ps
+chmod 777 /sys/bus/platform/drivers/als_ps/ges_enable
 #
 #ril-daemon (begin)
 #
@@ -1481,73 +1592,3 @@ service program_binary /system/bin/program_binary_service
     user system
     group graphics
     oneshot
-# lenovo
-service memtester4 /system/bin/memtester 4M 1
-	oneshot
-	disabled
-
-on property:sys.memtester.enable=4
-	start memtester4
-
-service memtester10 /system/bin/memtester 10M 1
-	oneshot
-	disabled
-
-on property:sys.memtester.enable=10
-	start memtester10
-
-service memtester50 /system/bin/memtester 50M 1
-	oneshot
-	disabled
-
-on property:sys.memtester.enable=50
-	start memtester50
-
-service memtester100 /system/bin/memtester 100M 1
-	oneshot
-	disabled
-
-on property:sys.memtester.enable=100
-	start memtester100
-
-service memtester500 /system/bin/memtester 500M 1
-	oneshot
-	disabled
-
-on property:sys.memtester.enable=500
-	start memtester500
-	
-service rootcheck /system/bin/rootcheck
-	oneshot
-	disabled
-
-on property:sys.md5check.enable=1
-	start rootcheck	
-	
-service rtck_recovery /system/bin/rootcheck  -R
-	oneshot
-	disabled
-
-on property:sys.rtck_recovery.enable=1
-	start rtck_recovery	
-	
-on property:sys.recoverylog=1
-    chown system system /cache
-    chmod 0777 /cache
-    chmod 0777 /cache/recovery
-on property:persist.sys.ne.enable=1
-    write /proc/sys/fs/suid_dumpable 2
-    write /proc/sys/kernel/core_pattern "|/system/bin/aee_core_forwarder /data/core/ %p %s UID=%u GID=%g"
-on property:persist.sys.ne.enable=0
-    write /proc/sys/fs/suid_dumpable 0
-
-#add by backup	
-service app6939 /system/bin/app6939
-    class main    
-    user root		
-	seclabel u:r:app6939:s0
-	
-##### Engineer Mode #############
-service EmodeService /system/bin/emodesvr
-    class main
-    user root

@@ -23,7 +23,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := a2010

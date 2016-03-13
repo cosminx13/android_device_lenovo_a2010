@@ -418,8 +418,6 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
 
-	chown radio radio /proc/driver/tsl2771_threshold
-	
     # Define default initial receive window size in segments.
     setprop net.tcp.default_init_rwnd 60
 
@@ -652,10 +650,3 @@ service pre-recovery /system/bin/uncrypt
     class main
     disabled
     oneshot
-
-# for touchscreen tsp black screen gesture wakeup.
-on property:persist.sys.gesture.enable=1
-    write /sys/class/tsp_fw/touchscreen/gesture_enable 1
-    
-on property:persist.sys.gesture.enable=0
-    write /sys/class/tsp_fw/touchscreen/gesture_enable 0 
