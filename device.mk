@@ -13,10 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
+$(call inherit-product-if-exists, vendor/lenovo/a2010/a2010-vendor.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
-$(call inherit-product, device/lenovo/a2010/vendor/copyfiles.mk)
 
 LOCAL_PATH := device/lenovo/a2010
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
