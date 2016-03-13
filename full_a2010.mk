@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/lenovo/a2010/device.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := LENOVO A2010,A2010
+PRODUCT_RELEASE_NAME := LENOVO_A2010,A2010
 
 EXTENDED_FONT_FOOTPRINT := true
 
