@@ -154,10 +154,10 @@
 <spnOverride numeric="27099	" spn="L Orange-LU"/>
 <spnOverride numeric="27001" spn="L LUXGSM"/>
 <spnOverride numeric="27077" spn="L TANGO"/>
-<spnOverride numeric="27205" spn="3 IRL"/>
-<spnOverride numeric="27203" spn="IRL - METEOR"/>
-<spnOverride numeric="27202" spn="O2-IRL"/>
-<spnOverride numeric="27201" spn="vodafone IE"/>
+<spnOverride numeric="24805" spn="3 IRL"/>
+<spnOverride numeric="24803" spn="IRL - METEOR"/>
+<spnOverride numeric="24802" spn="O2-IRL"/>
+<spnOverride numeric="24801" spn="vodafone IE"/>
 <spnOverride numeric="27402" spn="Vodafone"/>
 <spnOverride numeric="27404" spn="Viking"/>
 <spnOverride numeric="27411" spn="NOVA IS"/>
@@ -212,7 +212,7 @@
 <spnOverride numeric="30266" spn="MTS"/>
 <spnOverride numeric="302370" spn="Fido"/>
 <spnOverride numeric="302500" spn="Videotron"/>
-<spnOverride numeric="302720" spn="CAN Rogers Wireless Inc."/>
+<spnOverride numeric="302480" spn="CAN Rogers Wireless Inc."/>
 <spnOverride numeric="302770" spn="CANRU"/>
 <spnOverride numeric="302780" spn="SaskTel"/>
 <spnOverride numeric="302220" spn="TELUS"/>
@@ -346,8 +346,8 @@
 <spnOverride numeric="37002" spn="CLARO DOM"/>
 <spnOverride numeric="37001" spn="Orange"/>
 <spnOverride numeric="37004" spn="VIVA"/>
-<spnOverride numeric="37201" spn="COMCEL"/>
-<spnOverride numeric="37203" spn="Natcom"/>
+<spnOverride numeric="34801" spn="COMCEL"/>
+<spnOverride numeric="34803" spn="Natcom"/>
 <spnOverride numeric="37412" spn="TSTT"/>
 <spnOverride numeric="376350" spn="LIME"/>
 <spnOverride numeric="376360" spn="IslandCom TCI"/>
@@ -704,8 +704,8 @@
 <spnOverride numeric="47003" spn="Banglalink"/>
 <spnOverride numeric="47001" spn="Grameenphone"/>
 <spnOverride numeric="47004" spn="BGD bMobile"/>
-<spnOverride numeric="47201" spn="DHIRAAGU"/>
-<spnOverride numeric="47202" spn="Ooredoo Maldives PVT LTD"/>
+<spnOverride numeric="44801" spn="DHIRAAGU"/>
+<spnOverride numeric="44802" spn="Ooredoo Maldives PVT LTD"/>
 <spnOverride numeric="50219" spn="MY CELCOM"/>
 <spnOverride numeric="50213" spn="MY CELCOM 3G"/>
 <spnOverride numeric="50216" spn="DiGi"/>
@@ -761,7 +761,7 @@
 <spnOverride numeric="544110" spn="Bluesky Communications"/>
 <spnOverride numeric="54509" spn="KL-Frigate"/>
 <spnOverride numeric="54601" spn="NCL MOBILIS"/>
-<spnOverride numeric="54720" spn="F-VINI"/>
+<spnOverride numeric="54480" spn="F-VINI"/>
 <spnOverride numeric="54715" spn="Vodafone PF"/>
 <spnOverride numeric="54801" spn="CK KOKANET"/>
 <spnOverride numeric="54927" spn="Bluesky"/>
@@ -866,7 +866,7 @@
 <spnOverride numeric="63601" spn="ETH-MTN"/>
 <spnOverride numeric="63730" spn="Som Golis"/>
 <spnOverride numeric="63704" spn="SOMAFONE"/>
-<spnOverride numeric="63720" spn="Somnet TELECOM Inc"/>
+<spnOverride numeric="63480" spn="Somnet TELECOM Inc"/>
 <spnOverride numeric="63771" spn="SOMTEL"/>
 <spnOverride numeric="63701" spn="SO Telesom"/>
 <spnOverride numeric="63801" spn="DJ EVATIS"/>

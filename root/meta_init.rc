@@ -164,7 +164,7 @@ on post-fs
     chown system cache /cache
     chmod 0770 /cache
         
-    #zte_meta factory reset flag
+    #lenovo_meta factory reset flag
     chown system system /cache
     chmod 0777 /cache
     chown system system /cache/factory

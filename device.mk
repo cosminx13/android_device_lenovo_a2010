@@ -16,9 +16,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
-$(call inherit-product, device/zte/b880/vendor/copyfiles.mk)
+$(call inherit-product, device/lenovo/a2010/vendor/copyfiles.mk)
 
-LOCAL_PATH := device/zte/b880
+LOCAL_PATH := device/lenovo/a2010
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
@@ -26,7 +26,7 @@ PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := b880
+TARGET_OTA_ASSERT_DEVICE := a2010
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
    
    # init
 PRODUCT_PACKAGES += \
-    b880
+    a2010
 
 # Audio
 PRODUCT_PACKAGES += \

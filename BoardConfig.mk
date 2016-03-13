@@ -15,8 +15,8 @@
 # Powered by gesangtome Date：December 9, CST 2015.
 
 # 配置本地路径
-LOCAL_PATH := device/zte/b880
--include vendor/zte/b880/BoardConfigVendor.mk
+LOCAL_PATH := device/lenovo/a2010
+-include vendor/lenovo/a2010/BoardConfigVendor.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -80,8 +80,8 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 # 显示
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
 # 是否生成odex?
@@ -174,7 +174,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux权限规则
 BOARD_SEPOLICY_DIRS := \
-       device/zte/b880/sepolicy
+       device/lenovo/a2010/sepolicy
 BOARD_SEPOLICY_UNION := \
     app.te \
     device.te \

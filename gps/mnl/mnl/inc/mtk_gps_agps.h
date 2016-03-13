@@ -1027,7 +1027,7 @@ typedef struct
     MTK_GPS_ASSIST_BSV_T rABsv;             // PMTK717
     MTK_GPS_ASSIST_ACQ_T rAAcq;             // PMTK718
     MTK_GPS_ASSIST_FTA_T rAFta;             // PMTK719
-    MTK_GPS_ASSIST_DGP_T rARtcm;            // PMTK720
+    MTK_GPS_ASSIST_DGP_T rARtcm;            // PMTK480
     MTK_GPS_ASSIST_TOW_T rATow;             // PMTK725
     MTK_GPS_AGPS_CMD_MA_LOC_T rAMA_Loc;     // PMTK739
 #if defined(AGPS_SUPPORT_GNSS) 

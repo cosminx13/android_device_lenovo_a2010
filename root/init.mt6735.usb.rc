@@ -1,10 +1,10 @@
 on boot
     setprop sys.usb.vid 0E8D
-    write /sys/class/android_usb/android0/iManufacturer ZTE
-    write /sys/class/android_usb/android0/iProduct ZTE Android Phone
+    write /sys/class/android_usb/android0/iManufacturer LENOVO
+    write /sys/class/android_usb/android0/iProduct LENOVO Android Phone
     write /sys/class/android_usb/android0/iSerial ${ro.usb.sn}
     write /sys/class/android_usb/android0/f_rndis/wceis 1
-    write /sys/class/android_usb/android0/f_rndis/manufacturer ZTE
+    write /sys/class/android_usb/android0/f_rndis/manufacturer LENOVO
     write /sys/class/android_usb/android0/f_rndis/vendorID 19D2
 
 on fs

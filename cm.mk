@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/zte/b880/full_b880.mk)
+$(call inherit-product, device/lenovo/a2010/full_a2010.mk)
 
 
 # Inherit some common CM stuff.
@@ -21,8 +21,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := b880
-PRODUCT_NAME := cm_b880
-PRODUCT_BRAND := ZTE
-PRODUCT_MODEL := ZTE B880
-PRODUCT_MANUFACTURER := ZTE
+PRODUCT_DEVICE := a2010
+PRODUCT_NAME := cm_a2010
+PRODUCT_BRAND := LENOVO
+PRODUCT_MODEL := LENOVO A2010
+PRODUCT_MANUFACTURER := LENOVO

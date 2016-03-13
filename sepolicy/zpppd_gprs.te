@@ -1,4 +1,4 @@
-# zpppd_gprs - pppd process for ZTE 3gdongle ppp dail
+# zpppd_gprs - pppd process for LENOVO 3gdongle ppp dail
 type zpppd_gprs, domain;
 type zpppd_gprs_exec, exec_type, file_type;
 init_daemon_domain(zpppd_gprs)

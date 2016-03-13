@@ -810,18 +810,18 @@
        type="mms" 
   />
 
-  <apn carrier="Jazztel" 
+  <apn carrier="Jazlenovol" 
        mcc="214" 
        mnc="21" 
        apn="jazzinternet" 
        type="default,supl"
   />
   
-  <apn carrier="Jazztel MMS" 
+  <apn carrier="Jazlenovol MMS" 
        mcc="214" 
        mnc="21" 
        apn="jazzmms" 
-       mmsc="http://jazztelmms.com:8081" 
+       mmsc="http://jazlenovolmms.com:8081" 
        mmsproxy="217.18.32.183" 
        mmsport="8081"
        type="mms" 
@@ -4136,7 +4136,7 @@
 
   <apn carrier="Rogers LTE"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="ltemobile.apn"
       mmsc="http://mms.gprs.rogers.com"
       mmsproxy="10.128.1.69"
@@ -4147,7 +4147,7 @@
 
   <apn carrier="Rogers"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="rogers-core-appl1.apn"
       mmsc="http://mms.gprs.rogers.com"
       mmsproxy="10.128.1.69"
@@ -4157,7 +4157,7 @@
   
   <apn carrier="Rogers"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="internet.com"
       user="wapuser1"
       password="wap"
@@ -4166,7 +4166,7 @@
   
   <apn carrier="Rogers MMS"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="media.com"
       user="media"
       password="mda01"
@@ -4179,7 +4179,7 @@
   
   <apn carrier="Rogers Tethering"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="isp.apn"
       type="dun"
   />
@@ -4196,7 +4196,7 @@
 
   <apn carrier="Rogers"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="internet.com"
       user="guest"
       password="guest"
@@ -4205,7 +4205,7 @@
 
   <apn carrier="Rogers"
       mcc="302"
-      mnc="720"
+      mnc="480"
       apn="rogers-core-appl1.apn"
       mmsc="http://mms.gprs.rogers.com"
       mmsproxy="10.128.1.69"

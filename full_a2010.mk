@@ -23,27 +23,27 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/zte/b880/device.mk)
+$(call inherit-product, device/lenovo/a2010/device.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := ZTE B880,B880
+PRODUCT_RELEASE_NAME := LENOVO A2010,A2010
 
 EXTENDED_FONT_FOOTPRINT := true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.timezone=Asia/Shanghai 
 
-PRODUCT_DEVICE := b880
-PRODUCT_NAME := full_b880
-PRODUCT_BRAND := ZTE
-PRODUCT_MODEL := ZTE B880
-PRODUCT_MANUFACTURER := ZTE
+PRODUCT_DEVICE := a2010
+PRODUCT_NAME := full_a2010
+PRODUCT_BRAND := LENOVO
+PRODUCT_MODEL := LENOVO A2010
+PRODUCT_MANUFACTURER := LENOVO
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Boot animation
-TARGET_SCREEN_HEIGHT      := 1280
-TARGET_SCREEN_WIDTH       := 720
-TARGET_BOOTANIMATION_NAME := 720
+TARGET_SCREEN_HEIGHT      := 854
+TARGET_SCREEN_WIDTH       := 480
+TARGET_BOOTANIMATION_NAME := 480
 
 PRODUCT_DEFAULT_LANGUAGE := zh
 PRODUCT_DEFAULT_REGION   := CN
