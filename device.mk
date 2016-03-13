@@ -81,8 +81,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
       BGW \
       gps.default \
-      mnld \
-      YGPS
+      mnld 
+#      YGPS
 
 # SIM
 PRODUCT_PACKAGES += \
@@ -228,8 +228,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES := \
      camera.disable_zsl_mode=1 \
      ro.mount.fs=EXT4 \
      persist.service.acm.enable=0 \
-     persist.sys.usb.config=adb \
-     persist.sys.timezone=Asia/Shanghai
+     persist.sys.usb.config=adb 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0 \
